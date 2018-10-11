@@ -20,7 +20,7 @@ from keras.models import load_model
 
 import tensorflow as tf
 #%%
-mod = tf.keras.models.load_model('convmod_CNN2.wts.h5')
+mod = tf.keras.models.load_model('convmod_CNN.wts.h5')
 
 conv1w = mod.get_weights()[0]
 conv1b = mod.get_weights()[1]
