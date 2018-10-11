@@ -71,7 +71,7 @@ model.summary()
 # Set up some params 
 epochs = 200 # number of epochs to train on
 batch_size = 256 # training batch size default1024
-filepath = "CNN_constellation.wts.h5"
+filepath = "convmod_CNN.wts.h5"
 
 history = model.fit(X_train,
     Y_train,
