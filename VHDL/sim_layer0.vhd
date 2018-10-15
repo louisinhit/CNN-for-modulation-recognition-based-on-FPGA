@@ -98,12 +98,6 @@ architecture test of sim_layer0 is
 
 
 
-  --constant input_bias : integer := 128;
-  --constant weight_scaling : integer := 16777216/2;
-  --constant bias_scaling : integer := weight_scaling * (2**bias_shift);
-
-
-
 begin
 
   -- Sequential Process
