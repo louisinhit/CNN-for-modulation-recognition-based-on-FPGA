@@ -3,7 +3,7 @@
 """
 Created on Sun Sep 16 00:46:35 2018
 
-@author: lyndon
+@author: xueyuan
 """
 import os,random
 import numpy as np
