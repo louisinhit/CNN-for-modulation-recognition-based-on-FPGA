@@ -161,7 +161,7 @@ begin
     variable l : line;
 
     variable int_file: integer;
-    file input_file : text is in "output_layer0.txt";
+    file input_file : text is in "output_mynet_layer0.txt";
     file weight_file : text is in "conv2w_.txt";
     file bias_file : text is in "conv2b_.txt";
   
@@ -357,7 +357,7 @@ process(clk)
  ------just for debugging 
       
 ---------------------------------
-        if outcount =  13*13*40 then   --1*1*layer_size4
+        if outcount =  13*13*40 then
           write (l, string'("Closing file: "));
           write (l, outcount);          
           writeline (output, l);
