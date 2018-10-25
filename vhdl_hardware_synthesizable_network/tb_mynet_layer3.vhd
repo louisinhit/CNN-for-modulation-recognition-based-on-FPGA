@@ -158,9 +158,8 @@ begin
 
     variable int_rand: integer;
     variable l : line;
-
     variable int_file: integer;
-    file input_file : text is in "output_layer2.txt";
+    file input_file : text is in "output_mynet_layer2.txt";
     file weight_file : text is in "den2w_.txt";
     file bias_file : text is in "den2b_.txt";
   
@@ -239,9 +238,6 @@ begin
       wait until clk = '0';
       weight_first(pl) <= '1';
       
-      --UNIFORM(seed1, seed2, rand);
-      --int_rand := INTEGER(TRUNC(rand*(2.0**weight_width)));
-      
       readline(bias_file,l);
       read(l,int_file);
       int_rand := int_file;
@@ -258,8 +254,7 @@ begin
       for j in 1 to input_mask_height loop
         for k in 1 to input_mask_width loop
           for i in 1 to input_no_feature_planes_par*input_no_feature_planes_ser loop
-            --UNIFORM(seed1, seed2, rand);
-            --int_rand := INTEGER(TRUNC(rand*(2.0**weight_width)));
+ 
             write (l, string'("layer0 hi there "));
              writeline (output, l);
             readline(weight_file,l);
@@ -347,9 +342,6 @@ process(clk)
         for i in 0 to output_par_widen_factor*no_par_layers-1 loop
           --if ReLU then
             int_output := to_integer(signed(stream_out((i+1)*output_width-1 downto i*output_width)));
-          --else
-            --int_output := to_integer(signed(stream_out((i+1)*output_width-1 downto i*output_width)));
-          --end if;
             
           write( ol, int_output);
           writeline( output_file, ol);
@@ -362,7 +354,7 @@ process(clk)
  ------just for debugging 
       
 ---------------------------------
-        if outcount =  1*1*11 then   --1*1*layer_size4
+        if outcount =  1*1*11 then
           write (l, string'("Closing file: "));
           write (l, outcount);          
           writeline (output, l);
