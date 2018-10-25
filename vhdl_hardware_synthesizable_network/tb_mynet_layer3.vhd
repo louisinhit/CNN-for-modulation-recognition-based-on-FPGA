@@ -34,7 +34,7 @@ architecture test of tb_mynet_layer3 is
   constant weight_mem_order            : natural := 10;
   constant output_width                : natural := 41;
   constant output_shift                : natural := 21;
-  constant ReLU                        : boolean := true;
+  constant ReLU                        : boolean := false;
   constant output_par_widen_factor     : natural := 1;
   constant use_maxpool                 : boolean := false;
   constant maxpool_mask_width          : natural := 3;
