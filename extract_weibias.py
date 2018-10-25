@@ -59,7 +59,7 @@ for n in range(40):
 f.close()
 f= open("den1w.txt","w+")
 for out in range(128):
-    for inp in range(31360):
+    for inp in range(6760):
         a = den1w[inp,out]
         f.write("%f\n" % (a))
 f.close()
