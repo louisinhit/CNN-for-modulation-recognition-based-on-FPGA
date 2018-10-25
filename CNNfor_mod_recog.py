@@ -56,6 +56,7 @@ dr = 0.5
 model = models.Sequential()
 model.add(Reshape([1]+in_shp, input_shape=in_shp))
 model.add(Conv2D(64, (3,3),padding='valid', activation='relu', name='conv1', init='glorot_uniform',data_format='channels_first'))
+model.add(MaxPooling2D((2,2), padding='valid'))
 model.add(Dropout(dr))
 model.add(Conv2D(40, (3,3), padding='valid', activation='relu', name='conv2', init='glorot_uniform',data_format='channels_first'))
 model.add(Dropout(dr))
