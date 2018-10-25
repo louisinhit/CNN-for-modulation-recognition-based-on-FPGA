@@ -159,7 +159,7 @@ begin
     variable l : line;
 
     variable int_file: integer;
-    file input_file : text is in "output_layer1.txt";
+    file input_file : text is in "output_mynet_layer1.txt";
     file weight_file : text is in "den1w_.txt";
     file bias_file : text is in "den1b_.txt";
   
