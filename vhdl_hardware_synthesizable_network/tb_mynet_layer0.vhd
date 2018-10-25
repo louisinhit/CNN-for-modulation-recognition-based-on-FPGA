@@ -155,8 +155,6 @@ begin
 
 
   process
-    variable seed1, seed2: positive;
-    variable rand: real;
     variable int_rand: integer;
     variable l : line;
 
@@ -333,19 +331,15 @@ process(clk)
     variable ol : line;
     variable outcount : integer := 0;
     
-    file output_file : text is out "output_mynet_layer1.txt";
+    file output_file : text is out "output_mynet_layer0.txt";
     
   begin
     if rising_edge(clk) then
       if stream_out_valid = '1' then
         -- Output is unsigned if ReLU used
         for i in 0 to output_par_widen_factor*no_par_layers-1 loop
-          --if ReLU then
             int_output := to_integer(signed(stream_out((i+1)*output_width-1 downto i*output_width)));
-          --else
-            --int_output := to_integer(signed(stream_out((i+1)*output_width-1 downto i*output_width)));
-          --end if;
-            
+   
           write( ol, int_output);
           writeline( output_file, ol);
           outcount := outcount+1;
@@ -357,7 +351,7 @@ process(clk)
  ------just for debugging 
       
 ---------------------------------
-        if outcount =  15*15*64 then   --1*1*layer_size4
+        if outcount =  15*15*64 then
           write (l, string'("Closing file: "));
           write (l, outcount);          
           writeline (output, l);
