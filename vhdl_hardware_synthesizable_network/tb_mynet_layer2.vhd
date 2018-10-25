@@ -338,11 +338,7 @@ process(clk)
       if stream_out_valid = '1' then
         -- Output is unsigned if ReLU used
         for i in 0 to output_par_widen_factor*no_par_layers-1 loop
-          --if ReLU then
             int_output := to_integer(signed(stream_out((i+1)*output_width-1 downto i*output_width)));
-          --else
-            --int_output := to_integer(signed(stream_out((i+1)*output_width-1 downto i*output_width)));
-          --end if;
             
           write( ol, int_output);
           writeline( output_file, ol);
