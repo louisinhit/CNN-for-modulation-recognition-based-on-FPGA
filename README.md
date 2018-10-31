@@ -6,4 +6,5 @@ Here are Xueyuan’s thesis work. These codes can realize:
 2. Training neural network to obtain network parameters: `CNNfor_mod_recog.py`
 3. Extract weight and bias matrixes: `extract_weibias.py`
 4. Convert Tensorflow parameters to format that VHDL can use (float to int): `transform_weightbias.py`
-5. VHDL CNN network for implementing modulation classification: several files in VHDL folder.
+5. FPGA (VHDL) non-timed CNN for implementing modulation classification: folder `vhdl_non-timed_network`
+6. FPGA (VHDL) hardware synthesizable CNN for implementing modulation classification: folder `vhdl_hardware_synthesizable_network`
