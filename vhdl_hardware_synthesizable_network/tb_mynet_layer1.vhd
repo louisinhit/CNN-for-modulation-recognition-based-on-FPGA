@@ -107,7 +107,7 @@ architecture test of tb_mynet_layer1 is
   
 begin
 
-  clk <= not clk after 2 ns; -- Simulate 250MHz Clock
+  clk <= not clk after 1 ns; -- Simulate 250MHz Clock
   
   mynetlayer1: mynet_layer
     generic map (
